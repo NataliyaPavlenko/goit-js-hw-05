@@ -1,4 +1,5 @@
-/* Напиши класс StringBuilder.На вход он получает один параметр - строку, которую записывает в свойство _value.
+/* Напиши класс StringBuilder.
+На вход он получает один параметр - строку, которую записывает в свойство _value.
 
 Добавь классу следующий функционал:
 
@@ -6,6 +7,24 @@
 Метод append(str) - получает парметр str(строку) и добавляет ее в конец _value
 Метод prepend(str) - получает парметр str(строку) и добавляет ее в начало value
 Метод pad(str) - получает парметр str(строку) и добавляет ее в начало и в конец _value */
+
+class StringBuilder {
+  constructor(str) {
+    this._value = str;
+  }
+  get value() {
+    return this._value;
+  }
+  append(str) {
+    this._value += str;
+  }
+  prepend(str) {
+    this._value = str + this.value;
+  }
+  pad(str) {
+    this._value = str + this.value + str;
+  }
+}
 
 const builder = new StringBuilder(".");
 
